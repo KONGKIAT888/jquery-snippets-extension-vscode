@@ -1,8 +1,10 @@
 {
-  "name": "jquery-snippets",
-  "displayName": "jQuery Snippets",
+  "publisher": "Kongkiat",
+  "name": "jquery-snippets-code",
+  "displayName": "jQuery Snippets (Version 1.7.0+)",
   "description": "",
-  "version": "0.0.1",
+  "icon": "image/icon.png",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.76.0"
   },

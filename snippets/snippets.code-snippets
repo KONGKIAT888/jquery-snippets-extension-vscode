@@ -1,1 +1,859 @@
-{}
+{ // jQuery Snippets
+    ".after()": {
+        "prefix": "jq:after",
+        "body": [
+            "$(${1:selector}).after(${2:content});"
+        ],
+        "description": "Insert content, specified by the parameter, after each element in the set of matched elements."
+    },
+    "$.ajax()": {
+        "prefix": "jq:ajax",
+        "body": [
+            "$.ajax({",
+            "\ttype: \"${1|GET,POST,PUT,PATCH,DELETE|}\",",
+            "\turl: \"${2:url}\",",
+            "\tdata: \"${3:data}\",",
+            "\tdataType: \"${4:dataTpye}\",",
+            "\tsuccess: function (response, textStatus, jqXHR) {",
+            "\t\t${5://Do anything}",
+            "\t},",
+            "\terror: function (jqXHR, textStatus, errorThrown) {",
+            "\t\tconsole.table(jqXHR)",
+            "\t}",
+            "});",
+        ],
+        "description": "Perform an asynchronous HTTP (Ajax) request."
+    },
+    ".append()": {
+        "prefix": "jq:append",
+        "body": [
+            "$(${1:selector}).append(${2:content});"
+        ],
+        "description": "Insert content, specified by the parameter, to the end of each element in the set of matched elements."
+    },
+    ".appendto()": {
+        "prefix": "jq:appendto",
+        "body": [
+            "$(${1:content}).appendto(${2:content});"
+        ],
+        "description": "Insert every element in the set of matched elements to the end of the target."
+    },
+    "get.attr()": {
+        "prefix": "jq:attr[get]",
+        "body": [
+            "$(${1:selector}).attr(${2:attribute});"
+        ],
+        "description": "Get the value of an attribute for the first element in the set of matched elements."
+    },
+    "set.attr()": {
+        "prefix": "jq:attr[set]",
+        "body": [
+            "$(${1:selector}).attr(${2:attribute}, ${3:value});"
+        ],
+        "description": "Set one or more attributes for the set of matched elements."
+    },
+    "$.attr()": {
+        "prefix": "jq:attr[function]",
+        "body": [
+            "$(${1:selector}).attr(${2:attribute}, function (index, attr){\n\t${3:// Do anything}\n});"
+        ],
+        "description": "Get the value of an attribute for the first element in the set of matched elements."
+    },
+    ".removeAttr()": {
+        "prefix": "jq:removeattr",
+        "body": [
+            "$(${1:selector}).removeAttr(${2:attribute});"
+        ],
+        "description": "Remove an attribute from each element in the set of matched elements."
+    },
+    ".before()": {
+        "prefix": "jq:before",
+        "body": [
+            "$(${1:selector}).before(${2:content});"
+        ],
+        "description": "Insert content, specified by the parameter, before each element in the set of matched elements."
+    },
+    ".bind()": {
+        "prefix": "jq:bind",
+        "body": [
+            "$(${1:selector}).bind(${2:eventType}, function (e) {\n\t${3:// Do anything}\n});"
+        ],
+        "description": "Attach a handler to an event for the elements."
+    },
+    "data.bind()": {
+        "prefix": "jq:bind[data]",
+        "body": [
+            "$(${1:selector}).bind(${2:eventType}, ${3:eventData}, function (e) {\n\t${4:// Do anything}\n});"
+        ],
+        "description": "Attach a handler to an event for the elements."
+    },
+    ".blur()": {
+        "prefix": "jq:blur",
+        "body": [
+            "$(${1:selector}).blur(function (e) {\n\t${2:// Do anything}\n});"
+        ],
+        "description": "Bind an event handler to the \"blur\" JavaScript event, or trigger that event on an element."
+    },
+    ".change()": {
+        "prefix": "jq:change",
+        "body": [
+            "$(${1:selector}).change(function (e) {\n\t${2:// Do anything}\n});"
+        ],
+        "description": "Bind an event handler to the \"change\" JavaScript event, or trigger that event on an element."
+    },
+    ".addClass()": {
+        "prefix": "jq:addclass",
+        "body": [
+            "$(${1:content}).addClass(${2:className});"
+        ],
+        "description": "Adds the specified class(es) to each element in the set of matched elements."
+    },
+    ".removeClass()": {
+        "prefix": "jq:removeclass",
+        "body": [
+            "$(${1:content}).removeClass(${2:className});"
+        ],
+        "description": "Remove a single class or multiple classes from each element in the set of matched elements."
+    },
+    ".toggleClass()": {
+        "prefix": "jq:toggleclass",
+        "body": [
+            "$(${1:content}).toggleClass(${2:className});"
+        ],
+        "description": "Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the state argument."
+    },
+    ".click()": {
+        "prefix": "jq:click",
+        "body": [
+            "$(${1:selector}).click();"
+        ],
+        "description": "Bind an event handler to the \"click\" JavaScript event, or trigger that event on an element."
+    },
+    "$.click()": {
+        "prefix": "jq:click[function]",
+        "body": [
+            "$(${1:selector}).click(function (e) {\n\t${2:// Do anything}\n});"
+        ],
+        "description": "Bind an event handler to the \"click\" JavaScript event, or trigger that event on an element."
+    },
+    ".clone()": {
+        "prefix": "jq:clone",
+        "body": [
+            "$(${1:selector}).clone();"
+        ],
+        "description": "Create a deep copy of the set of matched elements."
+    },
+    ".contextmenu()": {
+        "prefix": "jq:contextmenu",
+        "body": [
+            "$(${1:selector}).contextmenu(function (e) {\n\t${2:// Do anything}\n});",
+        ],
+        "description": "Bind an event handler to the \"contextmenu\" JavaScript event, or trigger that event on an element."
+    },
+    "get.css()": {
+        "prefix": "jq:css[get]",
+        "body": [
+            "$(${1:selector}).css(${2:propertyName});"
+        ],
+        "description": "Get the computed style properties for the first element in the set of matched elements."
+    },
+    "set.css()": {
+        "prefix": "jq:css[set]",
+        "body": [
+            "$(${1:selector}).css(${2:propertyName}, ${3:value});"
+        ],
+        "description": "Set one or more CSS properties for the set of matched elements."
+    },
+    "get.data()": {
+        "prefix": "jq:data[get]",
+        "body": [
+            "$(${1:selector}).data(${2:key});"
+        ],
+        "description": "Store arbitrary data associated with the matched elements."
+    },
+    "set.data()": {
+        "prefix": "jq:data[set]",
+        "body": [
+            "$(${1:selector}).data(${2:key}, ${3:value});"
+        ],
+        "description": "Store arbitrary data associated with the matched elements."
+    },
+    ".removeData()": {
+        "prefix": "jq:removedata",
+        "body": [
+            "$(${1:selector}).removeData(${2:element});"
+        ],
+        "description": "Remove a previously-stored piece of data."
+    },
+    ".dblclick()": {
+        "prefix": "jq:dblclick",
+        "body": [
+            "$(${1:selector}).dblclick(function (e) {\n\t${2:// Do anything}\n});",
+        ],
+        "description": "Bind an event handler to the \"dblclick\" JavaScript event, or trigger that event on an element."
+    },
+    ".die()": {
+        "prefix": "jq:die",
+        "body": [
+            "$(${1:selector}).die(${2:eventType}, ${3:handler});"
+        ],
+        "description": "Remove event handlers previously attached using .live() from the elements."
+    },
+    ".ready()": {
+        "prefix": "jq:ready",
+        "body": [
+            "$(document).ready(function() {\n\t${1:// Do anything}\n});"
+        ],
+        "description": "Specify a function to execute when the DOM is fully loaded."
+    },
+    "$.document": {
+        "prefix": "jq:document",
+        "body": [
+            "$(function () {\n\t$1\n});"
+        ],
+        "description": "Specify a function to execute when the DOM is fully loaded."
+    },
+    "$.each": {
+        "prefix": "jq:each",
+        "body": [
+            "$.each(${1:collection}, function (${2:indexInArray}, ${3:valueOfElement}) {\n\t${4:// Do anything}\n});"
+        ],
+        "description": "Iterate over a jQuery object, executing a function for each matched element."
+    },
+    ".each()": {
+        "prefix": "jq:each[element]",
+        "body": [
+            "$(${1:selector}).each(function (index, element) {\n\t${2:// Do anything}\n});"
+        ],
+        "description": "Iterate over a jQuery object, executing a function for each matched element."
+    },
+    ".empty()": {
+        "prefix": "jq:empty",
+        "body": [
+            "$(${1:selector}).empty();"
+        ],
+        "description": "Remove all child nodes of the set of matched elements from the DOM."
+    },
+    ".fadeIn()": {
+        "prefix": "jq:fadein",
+        "body": [
+            "$(${1:selector}).fadeIn();"
+        ],
+        "description": "Display the matched elements by fading them to opaque."
+    },
+    "$.fadeIn()": {
+        "prefix": "jq:fadein[function]",
+        "body": [
+            "$(${1:selector}).fadeIn(${2:duration}, function () {\n\t${3:// Do anything}\n});"
+        ],
+        "description": "Display the matched elements by fading them to opaque."
+    },
+    ".fadeOut()": {
+        "prefix": "jq:fadeout",
+        "body": [
+            "$(${1:selector}).fadeOut();"
+        ],
+        "description": "Hide the matched elements by fading them to transparent."
+    },
+    "$.fadeOut()": {
+        "prefix": "jq:fadeout[function]",
+        "body": [
+            "$(${1:selector}).fadeOut(${2:duration}, function () {\n\t${3:// Do anything}\n});"
+        ],
+        "description": "Hide the matched elements by fading them to transparent."
+    },
+    ".fadeTo()": {
+        "prefix": "jq:fadeto",
+        "body": [
+            "$(${1:selector}).fadeTo(${2:duration}, ${3:opacity});"
+        ],
+        "description": "Adjust the opacity of the matched elements."
+    },
+    "$.fadeTo()": {
+        "prefix": "jq:fadeto[function]",
+        "body": [
+            "$(${1:selector}).fadeTo(${2:duration}, ${3:opacity}, function () {\n\t${4:// Do anything}\n});"
+        ],
+        "description": "Adjust the opacity of the matched elements."
+    },
+    ".find()": {
+        "prefix": "jq:find",
+        "body": [
+            "$(${1:selector}).find(${2:selector});"
+        ],
+        "description": "Get the descendants of each element in the current set of matched elements, filtered by a selector, jQuery object, or element."
+    },
+    ".focus()": {
+        "prefix": "jq:focus",
+        "body": [
+            "$(${1:selector}).focus(function (e) {\n\t${2:// Do anything}\n});"
+        ],
+        "description": "Bind an event handler to the \"focus\" JavaScript event, or trigger that event on an element."
+    },
+    ".focusin()": {
+        "prefix": "jq:focusin",
+        "body": [
+            "$(${1:selector}).focusin(function (e) {\n\t${2:// Do anything}\n});"
+        ],
+        "description": "Bind an event handler to the \"focusin\" event."
+    },
+    ".focusout()": {
+        "prefix": "jq:focusout",
+        "body": [
+            "$(${1:selector}).focusout(function (e) {\n\t${2:// Do anything}\n});"
+        ],
+        "description": "Bind an event handler to the \"focusout\" JavaScript event."
+    },
+    "$.get()": {
+        "prefix": "jq:get",
+        "body": [
+            "$.get(\"${1:url}\", ${2:data}, \n\tfunction (data, textStatus, jqXHR) {\n\t\t${4:// Do anything}\n\t},\n\t\"${3:dataTpye}\"\n);"
+        ],
+        "description": "Load data from the server using a HTTP GET request."
+    },
+    "$.getJSON()": {
+        "prefix": "jq:getjson",
+        "body": [
+            "$.getJSON(\"${1:url}\", ${2:data}, \n\tfunction (data, textStatus, jqXHR) {\n\t\t${3:// Do anything}\n\t}\n);"
+        ],
+        "description": "Load JSON-encoded data from the server using a GET HTTP request."
+    },
+    "$.getScript()": {
+        "prefix": "jq:getscript",
+        "body": [
+            "$.getScript(\"${1:url}\", \n\tfunction (data, textStatus, jqXHR) {\n\t\t${3:// Do anything}\n\t}\n);"
+        ],
+        "description": "Load a JavaScript file from the server using a GET HTTP request, then execute it."
+    },
+    ".hasClass()": {
+        "prefix": "jq:hasclass",
+        "body": [
+            "$(${1:selector}).hasClass(${2:className});"
+        ],
+        "description": "Determine whether any of the matched elements are assigned the given class."
+    },
+    "get.height()": {
+        "prefix": "jq:height[get]",
+        "body": [
+            "$(${1:selector}).height();"
+        ],
+        "description": "Get the current computed height for the first element in the set of matched elements."
+    },
+    "set.height()": {
+        "prefix": "jq:height[set]",
+        "body": [
+            "$(${1:selector}).height(${2:value});"
+        ],
+        "description": "Set the CSS height of every matched element."
+    },
+    ".hide()": {
+        "prefix": "jq:hide",
+        "body": [
+            "$(${1:selector}).hide();"
+        ],
+        "description": "Hide the matched elements."
+    },
+    "$.hide()": {
+        "prefix": "jq:hide[function]",
+        "body": [
+            "$(${1:selector}).hide(${2:duration}, function () {\n\t${3:// Do anything}\n});"
+        ],
+        "description": "Hide the matched elements."
+    },
+    ".hover()": {
+        "prefix": "jq:hover",
+        "body": [
+            "$(${1:selector}).hover(function () {\n\t${2:// Do anything}\n});"
+        ],
+        "description": "Bind two handlers to the matched elements, to be executed when the mouse pointer enters and leaves the elements."
+    },
+    "get.html()": {
+        "prefix": "jq:html[get]",
+        "body": [
+            "$(${1:selector}).html();"
+        ],
+        "description": "Get the HTML contents of the first element in the set of matched elements."
+    },
+    "set.html()": {
+        "prefix": "jq:html[set]",
+        "body": [
+            "$(${1:selector}).html(${2:html});"
+        ],
+        "description": "Set the HTML contents of each element in the set of matched elements."
+    },
+    ".innerHeight()": {
+        "prefix": "jq:innerheight",
+        "body": [
+            "$(${1:selector}).innerHeight();"
+        ],
+        "description": "Get the current computed height for the first element in the set of matched elements, including padding but not border."
+    },
+    ".innerWidth()": {
+        "prefix": "jq:innerwidth",
+        "body": [
+            "$(${1:selector}).innerWidth();"
+        ],
+        "description": "Get the current computed inner width for the first element in the set of matched elements, including padding but not border."
+    },
+    ".insertAfter()": {
+        "prefix": "jq:insertafter",
+        "body": [
+            "$(${1:target}).insertAfter(${2:selector});"
+        ],
+        "description": "Insert every element in the set of matched elements after the target."
+    },
+    ".insertBefore()": {
+        "prefix": "jq:insertbefore",
+        "body": [
+            "$(${1:target}).insertBefore(${2:selector});"
+        ],
+        "description": "Insert every element in the set of matched elements before the target."
+    },
+    ".keydown()": {
+        "prefix": "jq:keydown",
+        "body": [
+            "$(${1:selector}).keydown(function (e) {\n\t${2:// Do anything}\n});"
+        ],
+        "description": "Bind an event handler to the \"keydown\" JavaScript event, or trigger that event on an element."
+    },
+    ".keypress()": {
+        "prefix": "jq:keypress",
+        "body": [
+            "$(${1:selector}).keypress(function (e) {\n\t${2:// Do anything}\n});"
+        ],
+        "description": "Bind an event handler to the \"keypress\" JavaScript event, or trigger that event on an element."
+    },
+    ".keyup()": {
+        "prefix": "jq:keyup",
+        "body": [
+            "$(${1:selector}).keyup(function (e) {\n\t${2:// Do anything}\n});"
+        ],
+        "description": "Bind an event handler to the \"keyup\" JavaScript event, or trigger that event on an element."
+    },
+    ".load()": {
+        "prefix": "jq:load",
+        "body": [
+            "$(${1:selector}).load(\"${2:url}\");"
+        ],
+        "description": "Bind an event handler to the \"load\" JavaScript event."
+    },
+    "$.load()": {
+        "prefix": "jq:load[function]",
+        "body": [
+            "$(${1:selector}).load(\"${2:url}\", ${3:data}, \n\tfunction (response, status, request) {\n\t\t${4:this;}\n\t}\n);",
+        ],
+        "description": "Bind an event handler to the \"load\" JavaScript event."
+    },
+    ".map()": {
+        "prefix": "jq:map",
+        "body": [
+            "$.map(${1:arrayOrObject}, function (elementOrValue, indexOrKey) {\n\t${2://Do anything}\n});"
+        ],
+        "description": "Pass each element in the current matched set through a function, producing a new jQuery object containing the return values."
+    },
+    ".mousedown()": {
+        "prefix": "jq:mousedown",
+        "body": [
+            "$(${1:selector}).mousedown(function () {\n\t${2:// Do anything}\n});"
+        ],
+        "description": "Bind an event handler to the \"mousedown\" JavaScript event, or trigger that event on an element."
+    },
+    ".mouseenter()": {
+        "prefix": "jq:mouseenter",
+        "body": [
+            "$(${1:selector}).mouseenter(function () {\n\t${2:// Do anything}\n});"
+        ],
+        "description": "Bind an event handler to be fired when the mouse enters an element, or trigger that handler on an element."
+    },
+    ".mouseleave()": {
+        "prefix": "jq:mouseleave",
+        "body": [
+            "$(${1:selector}).mouseleave(function () {\n\t${2:// Do anything}\n});"
+        ],
+        "description": "Bind an event handler to be fired when the mouse leaves an element, or trigger that handler on an element."
+    },
+    ".mousemove()": {
+        "prefix": "jq:mousemove",
+        "body": [
+            "$(${1:selector}).mousemove(function (e) {\n\t${2:// Do anything}\n});"
+        ],
+        "description": "Bind an event handler to the \"mousemove\" JavaScript event, or trigger that event on an element."
+    },
+    ".mouseout()": {
+        "prefix": "jq:mouseout",
+        "body": [
+            "$(${1:selector}).mouseout(function () {\n\t${2:// Do anything}\n});"
+        ],
+        "description": "Bind an event handler to the \"mouseout\" JavaScript event, or trigger that event on an element."
+    },
+    ".mouseover()": {
+        "prefix": "jq:mouseover",
+        "body": [
+            "$(${1:selector}).mouseover(function () {\n\t${2:// Do anything}\n});"
+        ],
+        "description": "Bind an event handler to the \"mouseover\" JavaScript event, or trigger that event on an element."
+    },
+    ".mouseup()": {
+        "prefix": "jq:mouseup",
+        "body": [
+            "$(${1:selector}).mouseup(function () {\n\t${2:// Do anything}\n});"
+        ],
+        "description": "Bind an event handler to the \"mouseup\" JavaScript event, or trigger that event on an element."
+    },
+    ".offset()": {
+        "prefix": "jq:offset",
+        "body": [
+            "var offset = $(${1:selector}).offset();",
+            "var top = offset.top;",
+            "var left = offset.left;"
+        ],
+        "description": "Get the current coordinates of the first element in the set of matched elements, relative to the document."
+    },
+    ".offsetParent()": {
+        "prefix": "jq:offsetparent",
+        "body": [
+            "var offset = $(${1:selector}).offsetParent();",
+            "var top = offset.top;",
+            "var left = offset.left;"
+        ],
+        "description": "Get the closest ancestor element that is positioned."
+    },
+    ".on()": {
+        "prefix": "jq:on",
+        "body": [
+            "$(${1:elements}).on(${2:events}, ${3:data}, function () {\n\t${4:// Do anything}\n});"
+        ],
+        "description": "Attach an event handler function for one or more events to the selected elements."
+    },
+    ".one()": {
+        "prefix": "jq:one",
+        "body": [
+            "$(${1:selector}).one(${2:events}, function (e) {\n\t${3:// Do anything}\n});",
+        ],
+        "description": "Attach a handler to an event for the elements. The handler is executed at most once per element per event type."
+    },
+    "data.one()": {
+        "prefix": "jq:one[data]",
+        "body": [
+            "$(${1:selector}).one(${2:events}, ${3:data}, function (e) {\n\t${4:// Do anything}\n});",
+        ],
+        "description": "Attach a handler to an event for the elements. The handler is executed at most once per element per event type."
+    },
+    ".outerHeight()": {
+        "prefix": "jq:outterheight",
+        "body": [
+            "$(${1:selector}).outerHeight(${2:includeMargin});"
+        ],
+        "description": "Get the current computed outer height (including padding, border, and optionally margin) for the first element in the set of matched elements."
+    },
+    ".outerWidth()": {
+        "prefix": "jq:outterwidth",
+        "body": [
+            "$(${1:selector}).outerWidth(${2:includeMargin});"
+        ],
+        "description": "Get the current computed outer width (including padding, border, and optionally margin) for the first element in the set of matched elements."
+    },
+    ".position()": {
+        "prefix": "jq:position",
+        "body": [
+            "var position = $(${1:selector}).position();",
+            "var top = position.top;",
+            "var left = position.left;"
+        ],
+        "description": "Get the current coordinates of the first element in the set of matched elements, relative to the offset parent."
+    },
+    "$.post()": {
+        "prefix": "jq:post",
+        "body": [
+            "$.post(\"${1:url}\", ${2:data}, \n\tfunction (data, textStatus, jqXHR) {\n\t\t${4:// Do anything}\n\t},\n\t\"${3:dataTpye}\"\n);"
+        ],
+        "description": "Send data to the server using a HTTP POST request."
+    },
+    ".prepend()": {
+        "prefix": "jq:prepend",
+        "body": [
+            "$(${1:selector}).prepend(${2:content});"
+        ],
+        "description": "Insert content, specified by the parameter, to the beginning of each element in the set of matched elements."
+    },
+    ".prependTo()": {
+        "prefix": "jq:prependto",
+        "body": [
+            "$(${1:content}).prependTo(${2:selector});"
+        ],
+        "description": "Insert every element in the set of matched elements to the beginning of the target."
+    },
+    ".remove()": {
+        "prefix": "jq:remove",
+        "body": [
+            "$(${1:selector}).remove();"
+        ],
+        "description": "Remove the set of matched elements from the DOM."
+    },
+    ".replaceAll()": {
+        "prefix": "jq:replaceall",
+        "body": [
+            "$(${1:selector}).replaceAll(${2:target});"
+        ],
+        "description": "Replace each target element with the set of matched elements."
+    },
+    ".replaceWith()": {
+        "prefix": "jq:replacewith",
+        "body": [
+            "$(${1:selector}).replaceWith(${2:newContent});"
+        ],
+        "description": "Replace each element in the set of matched elements with the provided new content and return the set of elements that was removed."
+    },
+    ".resize()": {
+        "prefix": "jq:resize",
+        "body": [
+            "$(${1:selector}).resize(function () {\n\t${2:// Do anything}\n});"
+        ],
+        "description": "Bind an event handler to the \"resize\" JavaScript event, or trigger that event on an element."
+    },
+    ".scroll()": {
+        "prefix": "jq:scroll",
+        "body": [
+            "$(${1:selector}).scroll(function () {\n\t${2:// Do anything}\n});"
+        ],
+        "description": "Bind an event handler to the \"scroll\" JavaScript event, or trigger that event on an element."
+    },
+    "get.scrollLeft()": {
+        "prefix": "jq:scrollleft[get]",
+        "body": [
+            "$(${1:selector}).scrollLeft();"
+        ],
+        "description": "Get the current horizontal position of the scroll bar for the first element in the set of matched elements."
+    },
+    "set.scrollLeft()": {
+        "prefix": "jq:scrollleft[set]",
+        "body": [
+            "$(${1:selector}).scrollLeft(${2:value});"
+        ],
+        "description": "Set the current horizontal position of the scroll bar for each of the set of matched elements."
+    },
+    "get.scrollTop()": {
+        "prefix": "jq:scrolltop[get]",
+        "body": [
+            "$(${1:selector}).scrollTop();"
+        ],
+        "description": "Get the current vertical position of the scroll bar for the first element in the set of matched elements or set the vertical position of the scroll bar for every matched element."
+    },
+    "set.scrollTop()": {
+        "prefix": "jq:scrolltop[set]",
+        "body": [
+            "$(${1:selector}).scrollTop(${2:value});"
+        ],
+        "description": "Set the current vertical position of the scroll bar for each of the set of matched elements."
+    },
+    ".select()": {
+        "prefix": "jq:select",
+        "body": [
+            "$(${1:selector}).select();"
+        ],
+        "description": "Bind an event handler to the \"select\" JavaScript event, or trigger that event on an element."
+    },
+    "$.select()": {
+        "prefix": "jq:select[function]",
+        "body": [
+            "$(${1:selector}).select(function () {\n\t${2:// Do anything}\n});"
+        ],
+        "description": "Bind an event handler to the \"select\" JavaScript event, or trigger that event on an element."
+    },
+    ".show()": {
+        "prefix": "jq:show",
+        "body": [
+            "$(${1:selector}).show();"
+        ],
+        "description": "Display the matched elements."
+    },
+    "$.show()": {
+        "prefix": "jq:show[function]",
+        "body": [
+            "$(${1:selector}).show(${2:duration}, function () {\n\t${3:// Do anything}\n});"
+        ],
+        "description": "Display the matched elements."
+    },
+    ".slideDown()": {
+        "prefix": "jq:slidedown",
+        "body": [
+            "$(${1:selector}).slideDown();"
+        ],
+        "description": "Display the matched elements with a sliding motion."
+    },
+    "$.slideDown()": {
+        "prefix": "jq:slidedown[function]",
+        "body": [
+            "$(${1:selector}).slideDown(${2:duration}, function () {\n\t${3:// Do anything}\n});"
+        ],
+        "description": "Display the matched elements with a sliding motion."
+    },
+    ".slideToggle()": {
+        "prefix": "jq:slidetoggle",
+        "body": [
+            "$(${1:selector}).slideToggle();"
+        ],
+        "description": "Display or hide the matched elements with a sliding motion."
+    },
+    ".slideUp()": {
+        "prefix": "jq:slideup",
+        "body": [
+            "$(${1:selector}).slideUp();"
+        ],
+        "description": "Hide the matched elements with a sliding motion."
+    },
+    "$.slideUp()": {
+        "prefix": "jq:slideup[function]",
+        "body": [
+            "$(${1:selector}).slideUp(${2:duration}, function () {\n\t${3:// Do anything}\n});"
+        ],
+        "description": "Hide the matched elements with a sliding motion."
+    },
+    ".submit()": {
+        "prefix": "jq:submit",
+        "body": [
+            "$(${1:selector}).submit();"
+        ],
+        "description": "Bind an event handler to the \"submit\" JavaScript event, or trigger that event on an element."
+    },
+    "$.submit()": {
+        "prefix": "jq:submit[function]",
+        "body": [
+            "$(${1:selector}).submit(function (e) {\n\t${2:// Do anything}\n});"
+        ],
+        "description": "Bind an event handler to the \"submit\" JavaScript event, or trigger that event on an element."
+    },
+    "get.text()": {
+        "prefix": "jq:text[get]",
+        "body": [
+            "$(${1:selector}).text();"
+        ],
+        "description": "Get the combined text contents of each element in the set of matched elements, including their descendants."
+    },
+    "set.text()": {
+        "prefix": "jq:text[set]",
+        "body": [
+            "$(${1:selector}).text(${2:text});"
+        ],
+        "description": "Set the content of each element in the set of matched elements to the specified text."
+    },
+    ".toggle()": {
+        "prefix": "jq:toggle",
+        "body": [
+            "$(${1:selector}).toggle();"
+        ],
+        "description": "Bind two or more handlers to the matched elements, to be executed on alternate clicks."
+    },
+    "$.toggle()": {
+        "prefix": "jq:toggle[function]",
+        "body": [
+            "$(${1:selector}).toggle(${2:duration}, function () {\n\t${3:// Do anything}\n});"
+        ],
+        "description": "Bind two or more handlers to the matched elements, to be executed on alternate clicks."
+    },
+    ".trigger()": {
+        "prefix": "jq:trigger",
+        "body": [
+            "$(${1:selector}).trigger(${2:eventType});"
+        ],
+        "description": "Execute all handlers and behaviors attached to the matched elements for the given event type."
+    },
+    "data.trigger()": {
+        "prefix": "jq:trigger[data]",
+        "body": [
+            "$(${1:selector}).trigger(${2:eventType}, ${3:data});"
+        ],
+        "description": "Execute all handlers and behaviors attached to the matched elements for the given event type."
+    },
+    "$.trigger()": {
+        "prefix": "jq:trigger[function]",
+        "body": [
+            "$(${1:selector}).trigger(${2:eventType}, function () {\n\t${3:// Do anything}\n});"
+        ],
+        "description": "Execute all handlers and behaviors attached to the matched elements for the given event type."
+    },
+    ".triggerHandler()": {
+        "prefix": "jq:triggerhandler",
+        "body": [
+            "$(${1:selector}).triggerHandler(${2:eventType});"
+        ],
+        "description": "Execute all handlers attached to an element for an event."
+    },
+    "data.triggerHandler()": {
+        "prefix": "jq:triggerhandler[data]",
+        "body": [
+            "$(${1:selector}).triggerHandler(${2:eventType}, ${3:data});"
+        ],
+        "description": "Execute all handlers attached to an element for an event."
+    },
+    ".unbind()": {
+        "prefix": "jq:unbind",
+        "body": [
+            "$(${1:selector}).unbind();"
+        ],
+        "description": "Remove a previously-attached event handler from the elements."
+    },
+    "$.unbind()": {
+        "prefix": "jq:unbind[function]",
+        "body": [
+            "$(${1:selector}).unbind(${2:eventType}, function () {\n\t${3:// Do anything}\n});"
+        ],
+        "description": "Remove a previously-attached event handler from the elements."
+    },
+    ".unload()": {
+        "prefix": "jq:unload",
+        "body": [
+            "$(${1:selector}).unload(function () {\n\t${2:// Do anything}\n});"
+        ],
+        "description": "Bind an event handler to the \"unload\" JavaScript event."
+    },
+    "get.val()": {
+        "prefix": "jq:val[get]",
+        "body": [
+            "$(${1:selector}).val();"
+        ],
+        "description": "Get the current value of the first element in the set of matched elements."
+    },
+    "set.val()": {
+        "prefix": "jq:val[set]",
+        "body": [
+            "$(${1:selector}).val(${2:value});"
+        ],
+        "description": "Set the value of each element in the set of matched elements."
+    },
+    "get.width()": {
+        "prefix": "jq:width[get]",
+        "body": [
+            "$(${1:selector}).width();"
+        ],
+        "description": "Get the current computed width for the first element in the set of matched elements."
+    },
+    "set.width()": {
+        "prefix": "jq:width[set]",
+        "body": [
+            "$(${1:selector}).width(${2:value});"
+        ],
+        "description": "Set the CSS width of each element in the set of matched elements."
+    },
+    ".wrap()": {
+        "prefix": "jq:wrap",
+        "body": [
+            "$(${1:selector}).wrap(${2:element});"
+        ],
+        "description": "Wrap an HTML structure around each element in the set of matched elements."
+    },
+    ".wrapAll()": {
+        "prefix": "jq:wrapall",
+        "body": [
+            "$(${1:selector}).wrapAll(${2:element});"
+        ],
+        "description": "Wrap an HTML structure around all elements in the set of matched elements."
+    },
+    ".wrapInner()": {
+        "prefix": "jq:wrapinner",
+        "body": [
+            "$(${1:selector}).wrapInner(${2:element});"
+        ],
+        "description": "Wrap an HTML structure around the content of each element in the set of matched elements."
+    },
+}
