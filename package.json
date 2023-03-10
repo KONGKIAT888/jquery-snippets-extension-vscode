@@ -4,7 +4,7 @@
   "displayName": "jQuery Snippets (Version 1.7.0+)",
   "description": "",
   "icon": "image/icon.png",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "engines": {
     "vscode": "^1.76.0"
   },

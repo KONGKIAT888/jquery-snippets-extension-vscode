@@ -660,6 +660,13 @@
         ],
         "description": "Bind an event handler to the \"select\" JavaScript event, or trigger that event on an element."
     },
+    "jQuery()": {
+        "prefix": ["jq:selectors", "$()"],
+        "body": [
+            "$(${1:selectors})$2;"
+        ],
+        "description": "Selectors are used to \"find\" (or select) HTML elements based on their name, id, classes, types, attributes, values of attributes and much more. It's based on the existing CSS Selectors, and in addition, it has some own custom selectors."
+    },
     ".show()": {
         "prefix": "jq:show",
         "body": [
@@ -855,5 +862,19 @@
             "$(${1:selector}).wrapInner(${2:element});"
         ],
         "description": "Wrap an HTML structure around the content of each element in the set of matched elements."
+    },
+    "$(this)": {
+        "prefix": "jq:this",
+        "body": [
+            "$(${1:this})$2;"
+        ],
+        "description": "Selects the current HTML element."
+    },
+    "$(\"*\")": {
+        "prefix": "jq:*",
+        "body": [
+            "$(${1:\"*\"})$2;"
+        ],
+        "description": "Selects all elements."
     },
 }

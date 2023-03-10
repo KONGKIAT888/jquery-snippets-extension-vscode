@@ -103,34 +103,38 @@ Snippets for the most common jQuery features. Works with .js files.
 |90|`jq:scrolltop[set]`|Set the current vertical position of the scroll bar for each of the set of matched elements.|
 |91|`jq:select`|Bind an event handler to the \"select\" JavaScript event, or trigger that event on an element.|
 |92|`jq:select[function]`||Bind an event handler to the \"select\" JavaScript event, or trigger that event on an element.
-|93|`jq:show`|Display the matched elements.|
-|94|`jq:show[function]`|Display the matched elements.|
-|95|`jq:slidedown`|Display the matched elements with a sliding motion.|
-|96|`jq:slidedown[function]`|Display the matched elements with a sliding motion.|
-|97|`jq:slidetoggle`|Display or hide the matched elements with a sliding motion.|
-|98|`jq:slideup`|Hide the matched elements with a sliding motion.|
-|99|`jq:slideup[function]`|Hide the matched elements with a sliding motion.|
-|100|`jq:submit`|Bind an event handler to the \"submit\" JavaScript event, or trigger that event on an element.|
-|101|`jq:submit[function]`|Bind an event handler to the \"submit\" JavaScript event, or trigger that event on an element.|
-|102|`jq:text[get]`|Get the combined text contents of each element in the set of matched elements, including their descendants.|
-|103|`jq:text[set]`|Set the content of each element in the set of matched elements to the specified text.|
-|104|`jq:toggle`|Bind two or more handlers to the matched elements, to be executed on alternate clicks.|
-|105|`jq:toggle[function]`|Bind two or more handlers to the matched elements, to be executed on alternate clicks.|
-|106|`jq:trigger`|Execute all handlers and behaviors attached to the matched elements for the given event type.|
-|107|`jq:trigger[data]`|Execute all handlers and behaviors attached to the matched elements for the given event type.|
-|108|`jq:trigger[function]`|Execute all handlers and behaviors attached to the matched elements for the given event type.|
-|109|`jq:triggerhandler`|Execute all handlers attached to an element for an event.|
-|110|`jq:triggerhandler[data]`|Execute all handlers attached to an element for an event.|
-|111|`jq:unbind`|Remove a previously-attached event handler from the elements.|
-|112|`jq:unbind[function]`|Remove a previously-attached event handler from the elements.|
-|113|`jq:unload`|Bind an event handler to the \"unload\" JavaScript event.|
-|114|`jq:val[get]`|Get the current value of the first element in the set of matched elements.|
-|115|`jq:val[set]`|Set the value of each element in the set of matched elements.|
-|116|`jq:width[get]`|Get the current computed width for the first element in the set of matched elements.|
-|117|`jq:width[set]`|Set the CSS width of each element in the set of matched elements.|
-|118|`jq:wrap`|Wrap an HTML structure around each element in the set of matched elements.|
-|119|`jq:wrapall`|Wrap an HTML structure around all elements in the set of matched elements.|
-|120|`jq:wrapinner`|Wrap an HTML structure around the content of each element in the set of matched elements.|
+|93|`jq:selectors`|Selectors are used to \"find\" (or select) HTML elements based on their name, id, classes, types, attributes, values of attributes and much more. It's based on the existing CSS Selectors, and in addition, it has some own custom selectors.|
+|94|`jq:show`|Display the matched elements.|
+|95|`jq:show[function]`|Display the matched elements.|
+|96|`jq:slidedown`|Display the matched elements with a sliding motion.|
+|97|`jq:slidedown[function]`|Display the matched elements with a sliding motion.|
+|98|`jq:slidetoggle`|Display or hide the matched elements with a sliding motion.|
+|99|`jq:slideup`|Hide the matched elements with a sliding motion.|
+|100|`jq:slideup[function]`|Hide the matched elements with a sliding motion.|
+|101|`jq:submit`|Bind an event handler to the \"submit\" JavaScript event, or trigger that event on an element.|
+|102|`jq:submit[function]`|Bind an event handler to the \"submit\" JavaScript event, or trigger that event on an element.|
+|103|`jq:text[get]`|Get the combined text contents of each element in the set of matched elements, including their descendants.|
+|104|`jq:text[set]`|Set the content of each element in the set of matched elements to the specified text.|
+|105|`jq:toggle`|Bind two or more handlers to the matched elements, to be executed on alternate clicks.|
+|106|`jq:toggle[function]`|Bind two or more handlers to the matched elements, to be executed on alternate clicks.|
+|107|`jq:trigger`|Execute all handlers and behaviors attached to the matched elements for the given event type.|
+|108|`jq:trigger[data]`|Execute all handlers and behaviors attached to the matched elements for the given event type.|
+|109|`jq:trigger[function]`|Execute all handlers and behaviors attached to the matched elements for the given event type.|
+|110|`jq:triggerhandler`|Execute all handlers attached to an element for an event.|
+|111|`jq:triggerhandler[data]`|Execute all handlers attached to an element for an event.|
+|112|`jq:unbind`|Remove a previously-attached event handler from the elements.|
+|113|`jq:unbind[function]`|Remove a previously-attached event handler from the elements.|
+|114|`jq:unload`|Bind an event handler to the \"unload\" JavaScript event.|
+|115|`jq:val[get]`|Get the current value of the first element in the set of matched elements.|
+|116|`jq:val[set]`|Set the value of each element in the set of matched elements.|
+|117|`jq:width[get]`|Get the current computed width for the first element in the set of matched elements.|
+|118|`jq:width[set]`|Set the CSS width of each element in the set of matched elements.|
+|119|`jq:wrap`|Wrap an HTML structure around each element in the set of matched elements.|
+|120|`jq:wrapall`|Wrap an HTML structure around all elements in the set of matched elements.|
+|121|`jq:wrapinner`|Wrap an HTML structure around the content of each element in the set of matched elements.|
+|122|`jq:this`|Selects the current HTML element.|
+|123|`jq:*`|Selects all elements.|
+|124|`$()`|Selectors are used to \"find\" (or select) HTML elements based on their name, id, classes, types, attributes, values of attributes and much more. It's based on the existing CSS Selectors, and in addition, it has some own custom selectors.|
 
 ## Release Notes
 
